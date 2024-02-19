@@ -1,0 +1,23 @@
+{
+  "name": "playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "regrationtest": "npx playwright test",
+    "google": "npx playwright test google.speck.js",
+    "amazon": "npx playwright test amazonPageObject.spect.js --config playwright.config1.js --project=chrome",
+    "foundit": "npx playwright test foundit.spec.js",
+    "flipkartDailyProducts": "npx playwright test flipkartDailyProducts.spec.js",
+    "Orange": "npx playwright test OrangeHRM.spec.js",
+    "lint": "eslint D:/Playwright/ --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.39.0",
+    "@types/node": "^20.8.10",
+    "eslint": "^8.56.0"
+  }
+}
