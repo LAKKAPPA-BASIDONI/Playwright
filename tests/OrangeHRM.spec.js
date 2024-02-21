@@ -50,7 +50,7 @@ test("singin ", async({page}) => {
     //await page.pause()
 })
 
-test.only("setOfLocatorChecking", async({page})=>{
+test("setOfLocatorChecking", async({page})=>{
     await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
     const alll =  page.$$('p')
     await page.waitForTimeout(2000)
