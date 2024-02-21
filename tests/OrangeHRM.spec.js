@@ -50,14 +50,14 @@ test("singin ", async({page}) => {
     //await page.pause()
 })
 
-test("setOfLocatorChecking", async({page})=>{
-    await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
-    const alll =  page.$$('p')
-    await page.waitForTimeout(2000)
-    const count = await alll.length
-    console.log(count)
-    for(let ee of alll){
-        console.log(await ee.innerText())
-    }
-    await page.pause()
-})
+// test("setOfLocatorChecking", async({page})=>{
+//     await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+//     const alll =  page.$$('p')
+//     await page.waitForTimeout(2000)
+//     const count = await alll.length
+//     console.log(count)
+//     for(let ee of alll){
+//         console.log(await ee.innerText())
+//     }
+//     await page.pause()
+// })
