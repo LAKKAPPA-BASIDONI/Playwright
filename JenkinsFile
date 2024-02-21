@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+
+    stages {
+        // stage('Checkout') {
+        //     steps {
+        //         script {
+        //             // Clean workspace before checkout
+        //             deleteDir()
+
+        //             // Checkout the code from the GitHub repository
+        //             checkout([
+        //                 $class: 'GitSCM',
+        //                 branches: [[name: 'master']], // Specify the branch you want to build
+        //                 userRemoteConfigs: [[
+        //                     url: 'https://github.com/LAKKAPPA-BASIDONI/Playwright.git', // Replace with your GitHub repository URL
+        //                     //credentialsId: 'your-credentials-id' // Specify the Jenkins credentials for authentication
+        //                 ]]
+        //             ])
+        //         }
+        //     }
+        // }
+
+        stage('Install Playwright Dependencies') {
+            steps {
+                script {
+                    // Use npm ci for efficient dependency installation
+                    bat 'npm ci'
+                    
+                    // Install Playwright browsers
+                    bat 'npx playwright install'
+                }
+            }
+        }
+
+        stage('Run Playwright Tests') {
+            steps {
+                script {
+                    // Display available tests
+                    bat 'npx playwright test --list'
+                    
+                    // Run the Playwright tests
+                    bat 'npx playwright test OrangeHRM.spec.js'
+                }
+            }
+        }
+    }
+
+    
+}
