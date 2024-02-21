@@ -2,24 +2,24 @@ pipeline {
     agent any
 
     stages {
-        // stage('Checkout') {
-        //     steps {
-        //         script {
-        //             // Clean workspace before checkout
-        //             deleteDir()
+        stage('Checkout') {
+            steps {
+                script {
+                    // Clean workspace before checkout
+                    deleteDir()
 
-        //             // Checkout the code from the GitHub repository
-        //             checkout([
-        //                 $class: 'GitSCM',
-        //                 branches: [[name: 'master']], // Specify the branch you want to build
-        //                 userRemoteConfigs: [[
-        //                     url: 'https://github.com/LAKKAPPA-BASIDONI/Playwright.git', // Replace with your GitHub repository URL
-        //                     //credentialsId: 'your-credentials-id' // Specify the Jenkins credentials for authentication
-        //                 ]]
-        //             ])
-        //         }
-        //     }
-        // }
+                    // Checkout the code from the GitHub repository
+                    checkout([
+                        $class: 'GitSCM',
+                        branches: [[name: 'master']], // Specify the branch you want to build
+                        userRemoteConfigs: [[
+                            url: 'https://github.com/LAKKAPPA-BASIDONI/Playwright.git', // Replace with your GitHub repository URL
+                            //credentialsId: 'your-credentials-id' // Specify the Jenkins credentials for authentication
+                        ]]
+                    ])
+                }
+            }
+        }
 
         stage('Install Playwright Dependencies') {
             steps {
