@@ -27,7 +27,7 @@ pipeline {
                     // Use npm ci for efficient dependency installation
                     bat 'npm ci'
                     
-                    // Install Playwright browsers
+                    // Install Playwright browsers //playwright
                     bat 'npx playwright install'
                 }
             }
